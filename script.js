@@ -7,43 +7,56 @@ document.body.style.justifyContent="center";
 document.body.style.alignItems="center";
 document.body.style.justifyContent="space-evenly";
 
+// storing the path of the image
 let paperImagepath = "assert/paper.png";
-let stoneImagePath ="assert/stone.jpg";
-let scessorImagePath = "assert/scessor.png";
+let stoneImagePath ="assert/Stone.png";
+let scessorImagePath = "assert/Sicssor.png";
 
 let mainContainer = document.getElementById("mainContainer");
 mainContainer.style.height="300px"
-mainContainer.style.width="600px";
+mainContainer.style.width="800px";
 mainContainer.style.display="flex";
 mainContainer.style.flexDirection="row";
 mainContainer.style.justifyContent="center"
 mainContainer.style.alignItems="center";
 mainContainer.style.justifyContent="space-evenly";
-mainContainer.style.backgroundColor="yellow";
+mainContainer.style.backgroundColor="ivory";
 mainContainer.style.borderRadius ="40px";
+mainContainer.style.border = "10px solid lightgray";
 
-    // Number of life count
+// human annd computer count showing container
+let countVisibilityDiv = document.createElement("div");
+countVisibilityDiv.style.display="flex";
+countVisibilityDiv.style.height="80px";
+countVisibilityDiv.style.width="450px";
+countVisibilityDiv.style.backgroundColor="lightgrey";
+countVisibilityDiv.style.justifyContent="space-evenly";
+countVisibilityDiv.style.borderRadius="20px";
+document.body.append(countVisibilityDiv);
+
+   // Number of life count
 let lifeTimeVisibleDiv = document.createElement("div");
 document.body.append(lifeTimeVisibleDiv);
 
-let lifeTimeCount = document.createElement("h2");
-lifeTimeCount.innerText=`CHANCE - ${10}`;
-lifeTimeVisibleDiv.appendChild(lifeTimeCount);
 
 // reset button
 let resetButton = document.createElement("button");
 resetButton.innerText="RESET";
+resetButton.style.height = "50px";
+resetButton.style.width="200px";
+resetButton.style.border="4px solid grey";
+resetButton.style.backgroundColor="yellow";
+resetButton.style.fontWeight="bold";
+resetButton.style.color="white";
+resetButton.style.borderRadius="40px";
+resetButton.style.fontSize="20px";
+resetButton.style.backgroundColor="lightgrey";
 resetButton.style.display = "none";
 lifeTimeVisibleDiv.appendChild(resetButton);
 
-let countVisibilityDiv = document.createElement("div");
-countVisibilityDiv.style.display="flex";
-countVisibilityDiv.style.height="80px";
-countVisibilityDiv.style.width="350px";
-countVisibilityDiv.style.backgroundColor="orange";
-countVisibilityDiv.style.justifyContent="space-evenly";
-countVisibilityDiv.style.borderRadius="20px";
-document.body.append(countVisibilityDiv);
+let lifeTimeCount = document.createElement("h2");
+lifeTimeCount.innerText=`CHANCE - ${10}`;
+lifeTimeVisibleDiv.appendChild(lifeTimeCount);
 
     let humanCountOutputDiv = document.createElement("div");
     humanCountOutputDiv.style.backgroundColor="white";
@@ -87,7 +100,10 @@ window.onload =()=>{
      startGameButton.style.width = "230px";
      startGameButton.style.height= "50px";
      startGameButton.style.borderRadius ="40px";
-     startGameButton.style.border="none";
+     startGameButton.style.fontWeight="bold";
+     startGameButton.style.backgroundColor="mistyrose";
+     startGameButton.style.border = "4px solid lightgray"
+     
      mainContainer.appendChild(startGameButton);
 
     // adding the addevent listner to remove the start button
@@ -96,6 +112,15 @@ window.onload =()=>{
     });
 }
 
+// button container div
+let buttonDiv = document.createElement("div");
+buttonDiv.style.width="620px";
+buttonDiv.style.height="auto";
+buttonDiv.style.display="flex";
+buttonDiv.style.justifyContent="center";
+buttonDiv.style.alignItems="center";
+buttonDiv.style.justifyContent="space-evenly";
+document.body.append(buttonDiv);
 // human playing functions
 
 function gameInterface(removeStartButton){
@@ -109,21 +134,19 @@ function gameInterface(removeStartButton){
     let humanVisiblityDiv = document.createElement("div");
     mainContainer.appendChild(humanVisiblityDiv);
 
+    //    vs image
+   let vsImage = document.createElement("img");
+   vsImage.src="assert/Versus.png"
+   vsImage.style.height="100px";
+   vsImage.style.width="100px"; 
+   mainContainer.appendChild(vsImage);
+
     // computer output visibility div
     let computerVisiblityDiv = document.createElement("div");
     mainContainer.appendChild(computerVisiblityDiv);
 
     // countvisibility div
 
-    // button container div
-    let buttonDiv = document.createElement("div");
-    buttonDiv.style.width="620px";
-    buttonDiv.style.height="auto";
-    buttonDiv.style.display="flex";
-    buttonDiv.style.justifyContent="center";
-    buttonDiv.style.alignItems="center";
-    buttonDiv.style.justifyContent="space-evenly";
-    document.body.append(buttonDiv);
 
 
     // human player output image
@@ -131,7 +154,8 @@ function gameInterface(removeStartButton){
     humanButtonOutputImage.style.height = "200px";
     humanButtonOutputImage.style.width= "200px";
     humanButtonOutputImage.style.borderRadius ="40px";
-   
+   humanVisiblityDiv.appendChild(humanButtonOutputImage);
+
 
     // computer output image
     let computorRandomOutputImage =document.createElement("img");
@@ -146,33 +170,39 @@ function gameInterface(removeStartButton){
     // buttonCreations
     let stoneButton = document.createElement("button");
     stoneButton.textContent="STONE";
-    stoneButton.style.width = "150px";
-    stoneButton.style.height="40px";
+    stoneButton.style.width = "160px";
+    stoneButton.style.height="50px";
     stoneButton.style.backgroundColor="orange";
     stoneButton.style.border ="none";
     stoneButton.style.borderRadius="20px";
     stoneButton.style.color="white";
     stoneButton.style.fontWeight="bold";
+    stoneButton.style.backgroundColor="mediumturquoise";
+    stoneButton.style.border = "3px solid dodgerblue";
     
     let paperButton = document.createElement("button");
     paperButton.textContent="PAPER";
-    paperButton.style.width = "150px";
-    paperButton.style.height="40px";
+    paperButton.style.width = "160px";
+    paperButton.style.height="50px";
     paperButton.style.backgroundColor="orange";
     paperButton.style.border ="none";
     paperButton.style.borderRadius="20px";
     paperButton.style.color="white";
     paperButton.style.fontWeight="bold";
+    paperButton.style.backgroundColor="mediumspringgreen";
+    paperButton.style.border = "3px solid dodgerblue";
     
     let scessorButton = document.createElement("button");
     scessorButton.textContent="SECESSOR";
-    scessorButton.style.width = "150px";
-    scessorButton.style.height="40px";
+    scessorButton.style.width = "160px";
+    scessorButton.style.height="50px";
     scessorButton.style.backgroundColor="orange";
     scessorButton.style.border ="none";
     scessorButton.style.borderRadius="20px";
     scessorButton.style.color="white";
     scessorButton.style.fontWeight="bold";
+    scessorButton.style.backgroundColor="mediumorchild";
+    scessorButton.style.border = "3px solid dodgerblue";
 
 
     // image showing for whent the specfic button clicked
@@ -227,6 +257,7 @@ function computerMove(stoneImage,paperImage,scessorImage,computorRandomOutputIma
     computorRandomOutputImage.src=urlArray[randomIndex];
     let outputOfComputer=labelArray[randomIndex];
     result(outputOfHuman,outputOfComputer);
+    
     },600);
 }
 
@@ -301,6 +332,8 @@ function result(outputOfHuman,outputOfComputer){
    
     lifeTimeCount.style.display = "none";
     resetButton.style.display="block";
+    mainContainer.style.display="none";
+    
     resetButton.addEventListener("click",()=>{
          lifeTimeCount.innerText=`CHANCE - ${10}`;
          lifeTimeCount.style.display = "block";
@@ -311,18 +344,29 @@ function result(outputOfHuman,outputOfComputer){
          humanCountOutput.textContent=0;
          computerCountOutput.textContent=0;
          textWiningOutput.textContent="START GAME";
-
+         buttonDiv.style.display="flex";
+         mainContainer.style.display="flex";
          
+
     });
         if(computerCount<humanCount){
-             textWiningOutput.textContent="HUMAN WINS!";
+            textWiningOutput.textContent="HUMAN WINS!";
             alert("Human wins!");
+            buttonDiv.style.display="none";
+           
+            
         }else if(humanCount<computerCount){
             textWiningOutput.textContent="COMPUTER WINS!";
             alert("Computer Wins!");
+            buttonDiv.style.display="none";
+          
+           
         }else{
             textWiningOutput.textContent="MATCH DRAW";
             alert("Match Draw");
+            buttonDiv.style.display="none";
+         
+         
         }
     }
 }
