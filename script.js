@@ -351,21 +351,17 @@ function result(outputOfHuman,outputOfComputer){
     });
         if(computerCount<humanCount){
             textWiningOutput.textContent="HUMAN WINS!";
-            alert("Human wins!");
             buttonDiv.style.display="none";
            
             
         }else if(humanCount<computerCount){
             textWiningOutput.textContent="COMPUTER WINS!";
-            alert("Computer Wins!");
             buttonDiv.style.display="none";
           
            
         }else{
             textWiningOutput.textContent="MATCH DRAW";
-            alert("Match Draw");
             buttonDiv.style.display="none";
-         
          
         }
     }
