@@ -1,0 +1,216 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ #mainContainer{
+    height: 300px;
+    width: 800px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: ivory;
+    border-radius: 40px;
+    border: 10px solid lightgray;
+
+  }  
+
+  #textWinningOutput{
+    position: relative;
+    top: 1.6rem;
+    font-size: 20px;
+  }
+  #startGame{
+    width: 230px;
+    height: 50px;
+    border-radius: 40px;
+    font-weight: bold;
+    background-color: mistyrose;
+    border: 4px solid lightgray;
+  }
+  #versus{
+    height: 100px;
+    width: 100px;
+  }
+  .humanAndComButtonOutputImage{
+    height: 200px;
+    width: 200px;
+    border-radius: 40px;
+  }
+
+#countVisibilityDiv{
+    display: flex;
+    height: 80px;
+    width: 450px;
+    background-color: lightgrey;
+    justify-content: space-evenly;
+    border-radius: 20px;
+}
+.humanComputerCountOutputDiv{
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    margin-top: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 15px;
+}
+#lifeTimeCount{
+    font-size: 20px;
+}
+.stonePaperScissorButton{
+    width: 160px;
+    height: 50px;
+    background-color: orange;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: mediumturquoise;
+    border: 3px solid dodgerblue;
+}
+#paperButtonId{
+background-color: rgb(209, 200, 72);
+border: 3px solid rgb(216, 53, 181);
+}
+#scissorButtonId{
+background-color: rgb(38, 190, 228);
+border: 3px solid rgb(137, 53, 216);
+}
+#buttonDiv{
+    width: 620px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#resetButton{
+    height: 50px;
+    width: 200px;
+    border: 4px solid grey;
+    background-color: yellow;
+    font-weight: bold;
+    color: white;
+    border-radius: 40px;
+    font-size: 20px;
+    background-color: lightgrey;
+    display: none;
+}
+
+  
+/* media query */
+
+@media (min-width:320px) and (max-width:425px){
+ #mainContainer{
+    height: 150px;
+    width: 325px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: ivory;
+    border-radius: 35px;
+    border: 10px solid lightgray;
+    
+  }  
+
+   #startGame{
+    width: 115px;
+    height: 25px;
+    border-radius: 35px;
+    font-weight: bold;
+    background-color: mistyrose;
+    border: 4px solid lightgray;
+    font-size: 8px;
+  }
+  #versus{
+    height: 45px;
+    width: 45px;
+  }
+
+   .humanAndComButtonOutputImage{
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+  }
+#countVisibilityDiv{
+    display: flex;
+    height: 50px;
+    width: 315px;
+    background-color: lightgrey;
+    justify-content: space-evenly;
+    border-radius: 17px;
+}
+.humanComputerCountOutputDiv{
+    background-color: white;
+    height: 35px;
+    width: 50px;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+.stonePaperScissorButton{
+    width: 215px;
+    height: 40px;
+    background-color: orange;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    background-color: mediumturquoise;
+    border: 3px solid dodgerblue;
+}
+#paperButtonId{
+background-color: rgb(209, 200, 72);
+border: 3px solid rgb(216, 53, 181);
+}
+#scissorButtonId{
+background-color: rgb(38, 190, 228);
+border: 3px solid rgb(137, 53, 216);
+}
+#buttonDiv{
+    width: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#resetButton{
+    height: 30px;
+    width: 150px;
+    border: 2px solid grey;
+    font-weight: bold;
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: lightgrey;
+    display: none;
+}
+
+#textWinningOutput{
+    position: relative;
+    top: 0.9rem;
+    font-size: 20px;
+  }
+
+}

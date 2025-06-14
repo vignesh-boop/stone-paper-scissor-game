@@ -1,11 +1,4 @@
 
-document.body.style.height="100vh";
-document.body.style.width="100%";
-document.body.style.display = "flex";
-document.body.style.flexDirection="column";
-document.body.style.justifyContent="center";
-document.body.style.alignItems="center";
-document.body.style.justifyContent="space-evenly";
 
 // storing the path of the image
 let paperImagepath = "assert/paper.png";
@@ -13,25 +6,13 @@ let stoneImagePath ="assert/Stone.png";
 let scessorImagePath = "assert/Sicssor.png";
 
 let mainContainer = document.getElementById("mainContainer");
-mainContainer.style.height="300px"
-mainContainer.style.width="800px";
-mainContainer.style.display="flex";
-mainContainer.style.flexDirection="row";
-mainContainer.style.justifyContent="center"
-mainContainer.style.alignItems="center";
-mainContainer.style.justifyContent="space-evenly";
-mainContainer.style.backgroundColor="ivory";
-mainContainer.style.borderRadius ="40px";
-mainContainer.style.border = "10px solid lightgray";
+mainContainer.id="mainContainer"
+
 
 // human annd computer count showing container
 let countVisibilityDiv = document.createElement("div");
-countVisibilityDiv.style.display="flex";
-countVisibilityDiv.style.height="80px";
-countVisibilityDiv.style.width="450px";
-countVisibilityDiv.style.backgroundColor="lightgrey";
-countVisibilityDiv.style.justifyContent="space-evenly";
-countVisibilityDiv.style.borderRadius="20px";
+countVisibilityDiv.id ="countVisibilityDiv"
+
 document.body.append(countVisibilityDiv);
 
    // Number of life count
@@ -41,33 +22,18 @@ document.body.append(lifeTimeVisibleDiv);
 
 // reset button
 let resetButton = document.createElement("button");
+resetButton.id="resetButton";
 resetButton.innerText="RESET";
-resetButton.style.height = "50px";
-resetButton.style.width="200px";
-resetButton.style.border="4px solid grey";
-resetButton.style.backgroundColor="yellow";
-resetButton.style.fontWeight="bold";
-resetButton.style.color="white";
-resetButton.style.borderRadius="40px";
-resetButton.style.fontSize="20px";
-resetButton.style.backgroundColor="lightgrey";
-resetButton.style.display = "none";
 lifeTimeVisibleDiv.appendChild(resetButton);
 
 let lifeTimeCount = document.createElement("h2");
+lifeTimeCount.id="lifeTimeCount";
 lifeTimeCount.innerText=`CHANCE - ${10}`;
 lifeTimeVisibleDiv.appendChild(lifeTimeCount);
 
     let humanCountOutputDiv = document.createElement("div");
-    humanCountOutputDiv.style.backgroundColor="white";
-    humanCountOutputDiv.style.height="60px";
-    humanCountOutputDiv.style.width="60px";
-    humanCountOutputDiv.style.marginTop="0.6rem";
-    humanCountOutputDiv.style.display="flex";
-    humanCountOutputDiv.style.justifyContent="center";
-    humanCountOutputDiv.style.alignItems="center";
-    humanCountOutputDiv.style.borderRadius="15px";
-
+    humanCountOutputDiv.className="humanComputerCountOutputDiv"
+  
     countVisibilityDiv.appendChild(humanCountOutputDiv);
     let humanCountOutput = document.createElement("h2");
     humanCountOutput.textContent=0;
@@ -75,18 +41,12 @@ lifeTimeVisibleDiv.appendChild(lifeTimeCount);
 
     let textWiningOutput = document.createElement("h2");
     textWiningOutput.textContent="START GAME";
+    textWiningOutput.id = "textWinningOutput"
     countVisibilityDiv.appendChild(textWiningOutput);
 
     let computerCountOutputDiv = document.createElement("div");
-    computerCountOutputDiv.style.backgroundColor="white";
-    computerCountOutputDiv.style.height="60px";
-    computerCountOutputDiv.style.width="60px";
-    computerCountOutputDiv.style.marginTop="0.6rem";
-    computerCountOutputDiv.style.display="flex";
-    computerCountOutputDiv.style.justifyContent="center";
-    computerCountOutputDiv.style.alignItems="center";
-    computerCountOutputDiv.style.borderRadius="15px";
-
+    computerCountOutputDiv.className="humanComputerCountOutputDiv";
+    
     countVisibilityDiv.appendChild(computerCountOutputDiv);
     let computerCountOutput = document.createElement("h2");
     computerCountOutput.textContent=0;
@@ -96,13 +56,8 @@ lifeTimeVisibleDiv.appendChild(lifeTimeCount);
 // start button when the site load
 window.onload =()=>{
      let startGameButton= document.createElement("button");
+     startGameButton.id ="startGame";
      startGameButton.textContent="START GAME";
-     startGameButton.style.width = "230px";
-     startGameButton.style.height= "50px";
-     startGameButton.style.borderRadius ="40px";
-     startGameButton.style.fontWeight="bold";
-     startGameButton.style.backgroundColor="mistyrose";
-     startGameButton.style.border = "4px solid lightgray"
      
      mainContainer.appendChild(startGameButton);
 
@@ -114,12 +69,7 @@ window.onload =()=>{
 
 // button container div
 let buttonDiv = document.createElement("div");
-buttonDiv.style.width="620px";
-buttonDiv.style.height="auto";
-buttonDiv.style.display="flex";
-buttonDiv.style.justifyContent="center";
-buttonDiv.style.alignItems="center";
-buttonDiv.style.justifyContent="space-evenly";
+buttonDiv.id="buttonDiv";
 document.body.append(buttonDiv);
 // human playing functions
 
@@ -136,9 +86,8 @@ function gameInterface(removeStartButton){
 
     //    vs image
    let vsImage = document.createElement("img");
+   vsImage.id="versus";
    vsImage.src="assert/Versus.png"
-   vsImage.style.height="100px";
-   vsImage.style.width="100px"; 
    mainContainer.appendChild(vsImage);
 
     // computer output visibility div
@@ -151,17 +100,13 @@ function gameInterface(removeStartButton){
 
     // human player output image
     let humanButtonOutputImage = document.createElement("img");
-    humanButtonOutputImage.style.height = "200px";
-    humanButtonOutputImage.style.width= "200px";
-    humanButtonOutputImage.style.borderRadius ="40px";
+    humanButtonOutputImage.className="humanAndComButtonOutputImage";
    humanVisiblityDiv.appendChild(humanButtonOutputImage);
 
 
     // computer output image
     let computorRandomOutputImage =document.createElement("img");
-    computorRandomOutputImage.style.height = "200px";
-    computorRandomOutputImage.style.width= "200px";
-    computorRandomOutputImage.style.borderRadius="40px";
+    computorRandomOutputImage.className="humanAndComButtonOutputImage";
     computerVisiblityDiv.appendChild(computorRandomOutputImage);
 
 
@@ -170,39 +115,21 @@ function gameInterface(removeStartButton){
     // buttonCreations
     let stoneButton = document.createElement("button");
     stoneButton.textContent="STONE";
-    stoneButton.style.width = "160px";
-    stoneButton.style.height="50px";
-    stoneButton.style.backgroundColor="orange";
-    stoneButton.style.border ="none";
-    stoneButton.style.borderRadius="20px";
-    stoneButton.style.color="white";
-    stoneButton.style.fontWeight="bold";
-    stoneButton.style.backgroundColor="mediumturquoise";
-    stoneButton.style.border = "3px solid dodgerblue";
-    
+    stoneButton.className="stonePaperScissorButton";
+    stoneButton.id="stoneButtonId";
+
+   
     let paperButton = document.createElement("button");
     paperButton.textContent="PAPER";
-    paperButton.style.width = "160px";
-    paperButton.style.height="50px";
-    paperButton.style.backgroundColor="orange";
-    paperButton.style.border ="none";
-    paperButton.style.borderRadius="20px";
-    paperButton.style.color="white";
-    paperButton.style.fontWeight="bold";
-    paperButton.style.backgroundColor="mediumspringgreen";
-    paperButton.style.border = "3px solid dodgerblue";
+    paperButton.className="stonePaperScissorButton";
+    paperButton.id="paperButtonId";
+    
     
     let scessorButton = document.createElement("button");
-    scessorButton.textContent="SECESSOR";
-    scessorButton.style.width = "160px";
-    scessorButton.style.height="50px";
-    scessorButton.style.backgroundColor="orange";
-    scessorButton.style.border ="none";
-    scessorButton.style.borderRadius="20px";
-    scessorButton.style.color="white";
-    scessorButton.style.fontWeight="bold";
-    scessorButton.style.backgroundColor="mediumorchild";
-    scessorButton.style.border = "3px solid dodgerblue";
+    scessorButton.textContent="SCISSOR";
+    scessorButton.className="stonePaperScissorButton";
+    scessorButton.id="scissorButtonId";
+   
 
 
     // image showing for whent the specfic button clicked
